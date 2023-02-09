@@ -1,0 +1,17 @@
+import { Routes, Route } from "react-router-dom"
+import { userAuthContextProvider } from "../contexts/AuthContext";
+import { LogIn } from "./LogIn";
+import { SignUp } from './SignUp' 
+
+function App() {
+  return (
+    <serAuthContextProvider>
+    <Routes>
+      <Route path="/" element={<LogIn />} />
+      <Route path="/SignUp" element={<SignUp />} />
+    </Routes>
+    </userAuthContextProvider>
+  );
+}
+
+export default App;
