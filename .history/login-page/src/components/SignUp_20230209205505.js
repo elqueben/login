@@ -3,21 +3,22 @@ import { Link } from "react-router-dom";
 import { useUserAuth } from "../contexts/AuthContext";
 
 
-export function SignUp() {
+const SignUp = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { signUp } = useUserAuth();
+  const signUp = useUserAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
+    setError("")
     try {
       await signUp(email, password);
     } catch (err) {
-        setError(err.message); 
-    }
+        setError(err.message)
+    
+  }
   }
 
   return (
@@ -34,7 +35,7 @@ export function SignUp() {
             <label className="form-label">Password</label>
             <input onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" required />
           </div>
-          <button onClick={handleSubmit} type="submit" className="w-100 btn btn-primary">Sign Up</button>
+          <button type="submit" className="w-100 btn btn-primary">Submit</button>
         </form>
         <div className="w-100 text-center mt-2">
           already have an account? <Link to="/">Log In</Link> 
