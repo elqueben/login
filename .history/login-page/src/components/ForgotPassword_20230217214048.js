@@ -25,6 +25,7 @@ export  function ForgotPassword() {
     <>
         <div className="p-5">
         <h2 className="text-center mb-4">Reset Password</h2>
+        {error && <div className="alert alert-danger">{error}</div>}
           <form onSubmit={handleReset}>
           <p className='text-center'>type in the email to which the password was forgotten to, a link will be sent providing the user with a chance to reset their password</p>
           <div className="mb-3">

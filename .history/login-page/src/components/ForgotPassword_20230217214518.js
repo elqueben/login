@@ -14,7 +14,7 @@ export  function ForgotPassword() {
         e.preventDefault()
         setError("");
         try {
-            await resetPassword(email);
+            await resetPassword(auth, email);
             navigate("/");
         } catch (err) {
             return (err.message);
